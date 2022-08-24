@@ -1,8 +1,5 @@
 from morse_codes import morse_codes
 
-is_app = True
-
-
 def encrypt(message):
     code = ''
     for letter in message:
@@ -33,11 +30,12 @@ def decrypt(message):
                 citext += (list(morse_codes.keys()))[list(morse_codes.values()).index(decode)]  #convert morse-code into one character
                 decode = ''  #decode goes to 0 so we can store another character
         else:
-            pass
+            pass  #if it will find '/' it will skip that character
     citext += (list(morse_codes.keys()))[list(morse_codes.values()).index(decode)] #convert last character into morse-code
 
     return citext
 
+is_app = True
 while is_app:
     choice = input("Type 'E' to Encrypt,Type D to Decrypt, type 'Q' for Quit: ").upper()
     if choice == "E":
